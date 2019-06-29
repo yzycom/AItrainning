@@ -1,0 +1,14 @@
+import random
+def generate():
+    noun = ['女人','篮球','桌子','小猫']
+    Artical = ['一个','这个']
+    verb = ['看着','听着','看见']
+    Adj = ['蓝色的','好看的','小小的','年轻的','']
+    
+    
+    noun_phrase_master = Artical[random.randint(0,1)]+Adj[random.randint(0,4)]+noun[random.randint(0,3)]
+    noun_phrase_custom = Artical[random.randint(0,1)]+noun[random.randint(0,3)]
+    verb_phrase = verb[random.randint(0,2)]+noun_phrase_custom
+    return print(noun_phrase_master+verb_phrase)
+    
+generate()
