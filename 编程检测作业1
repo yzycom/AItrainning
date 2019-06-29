@@ -1,6 +1,6 @@
 def calculate(number):
     location = [0,0]
-    direction = [] #默认移动方向右，0：左，1：上，2：右, 3:下
+    direction = [] #默认移动方向，0：左，1：上，2：右, 3:下
     for x in range(0,number-1):
         if location[0] == 0 and location[1] == 0:
             direction.append(2)
