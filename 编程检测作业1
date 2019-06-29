@@ -1,0 +1,30 @@
+def calculate(number):
+    location = [0,0]
+    direction = [] #默认移动方向右，0：左，1：上，2：右, 3:下
+    for x in range(0,number-1):
+        if location[0] == 0 and location[1] == 0:
+            direction.append(2)
+        elif abs(location[0])==abs(location[1]) and location[0]>0 and location[1]<0: #转向规则 x=y，+- 转向走一步
+            direction.append(0)
+        elif abs(location[0])==abs(location[1]) and location[0]<0 and location[1]<0: #转向规则 x=y，-- 转向走一步
+            direction.append(1)
+        elif abs(location[0])==abs(location[1]) and location[0]<0 and location[1]>0: #转向规则 x=y，-+ 转向走一步
+            direction.append(2)
+        elif abs(location[0]-1)==abs(location[1]) and location[0]>0 and location[1]>=0:
+            direction.append(3)
+        else:
+            direction.append(direction[-1])
+            #print(direction)
+        if direction[x] == 0:
+            location[0] -= 1
+        elif direction[x] == 1:
+            location[1] += 1
+        elif direction[x] == 2:
+            location[0] += 1
+        elif direction[x] == 3:
+            location[1] -= 1
+        else: 
+            pass
+    return abs(location[0])+abs(location[1])
+    
+    calculate(100000)
