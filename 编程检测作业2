@@ -1,0 +1,20 @@
+def TestZhajinhua(test_num):
+    basic_num = [2,3,5] 
+    basic2_num = [1,2,3,5]
+    result_num = []
+    temp0_num =0.0
+
+    for x in basic_num:
+        while(test_num%x == 0):
+            result_num.append(x)
+            temp0_num = test_num/x
+            test_num = temp0_num
+            #print(temp0_num)
+    
+    if temp0_num in basic2_num:
+        return result_num
+    else:
+        return None
+        
+        
+TestZhajinhua(18456329387)
